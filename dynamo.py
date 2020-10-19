@@ -13,6 +13,11 @@ table_name = 'producer'
 
 request_type = 'PutRequest'
 
+def dynamo_start():
+    import boto3
+    client = boto3.client('dynamodb')
+    return client
+
 def dynamo_table(name):
 
     response = client.create_table(
