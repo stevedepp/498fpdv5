@@ -1,0 +1,9 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "serverlessproducer"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-g8yh0dei4jqb"
+s3_prefix = "serverlessproducer"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"

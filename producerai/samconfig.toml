@@ -1,0 +1,9 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "producerai"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-g8yh0dei4jqb"
+s3_prefix = "producerai"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"

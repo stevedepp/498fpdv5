@@ -4,10 +4,30 @@ import pprint
 import boto3
 from botocore.exceptions import ClientError
 
+role_name = 'admin4lamba498'
+allow_services_list = ['lambda.amazonaws.com']
+polict_arn = 'arn:aws:iam::aws:policy/AdministratorAccess'
+
 # https://docs.aws.amazon.com/code-samples/latest/catalog/python-iam-iam_basics-role_wrapper.py.html
 
 logger = logging.getLogger(__name__)
 iam = boto3.resource('iam')
+client = boto3.client('iam')
+
+
+def arns_list():
+    '''get list of all iam arns in use'''
+    roles = client.list_roles()['Roles']
+    arns_list=[]
+    for role in roles:
+        arns_list.append(role['Arn'])
+    return arns_list
+
+def name2arn(name):
+    '''convert iam name to arn'''
+    return [arn for arn in arns_list() if name in arn]
+
+
 
 def create_role(role_name, allowed_services):
     """
@@ -86,8 +106,10 @@ def detach_policy(iam_role_name, policy_arn):
             "Couldn't detach policy %s from role %s.", policy_arn, iam_role_name)
         raise
 
-
-def iam_create_role_with_policy(iam_role_name, allowed_services_list, policy_arn):
+def create_role_with_policy(
+        iam_role_name=role_name, 
+        allowed_services_list=allow_services_list, 
+        policy_arn=polict_arn):
     """
     allowed services = list e.g. ['lambda.amazonaws.com', 'batchoperations.s3.amazonaws.com']
     policy_arn e.g. arn:aws:iam::aws:policy/AdministratorAccess
