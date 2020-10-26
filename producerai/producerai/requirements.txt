@@ -3,3 +3,8 @@ pandas
 boto3
 python-json-logger
 wikipedia
+
+pandas
+boto3
+python-json-logger
+wikipedia

@@ -16,15 +16,8 @@ def make_rule(
     response = client.put_rule(
         Name = name,
         ScheduleExpression = rule,
-        RoleArn='arn:aws:iam::606363841935:role/admin4lambda498',
         Description = description)
     return response
-
-
-#(['severlessproducer-HelloWorldFunction-138X5UPOD97UL'],
- #['arn:aws:lambda:us-east-1:606363841935:function:severlessproducer-HelloWorldFunction-138X5UPOD97UL'])
-
-
 
 
 def attach_rule(name='5minutetimer', lambda_name='server'):

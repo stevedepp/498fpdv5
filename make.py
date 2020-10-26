@@ -4,6 +4,11 @@ import ddb
 import iam
 import L
 import event
+import s3
+
+def s3b():
+    response = s3.delete(name = 'aws-sam-cli-managed-default-samclisourcebucket-g8yh0dei4jqb')
+    return response
 
 def q():
 

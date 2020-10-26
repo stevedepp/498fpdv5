@@ -43,7 +43,8 @@ def update_iam(function_arn, iam_role):
 
 def update_roles():
     responses = []
-    iam_role = iam.name2arn('adminfordev498')[0]
+    iam_role = iam.name2arn('admin4lambda498')
+    iam_role = iam_role[0]
     for arn in list_arns():
         responses.append(update_iam(arn, iam_role))
     return responses 
