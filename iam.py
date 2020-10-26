@@ -17,6 +17,7 @@ client = boto3.client('iam')
 
 def arns_list():
     '''get list of all iam arns in use'''
+    client = boto3.client('iam')
     roles = client.list_roles()['Roles']
     arns_list=[]
     for role in roles:
@@ -57,7 +58,6 @@ def create_role(role_name, allowed_services):
     else:
         return role
 
-
 def delete_role(iam_role_name):
     """
     Deletes a role.
@@ -72,7 +72,6 @@ def delete_role(iam_role_name):
     except ClientError:
         logger.exception("Couldn't delete role %s.", iam_role_name)
         raise
-
 
 def attach_policy(role_name, policy_arn):
     """

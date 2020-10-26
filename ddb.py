@@ -1,7 +1,3 @@
-import boto3
-client = boto3.client('dynamodb')
-
-
 company_names = [
     'facebook', 
     'amazon', 
@@ -16,6 +12,9 @@ company_names = [
 table_name = 'fang'
 
 request_type = 'PutRequest'
+
+import boto3
+client = boto3.client('dynamodb')
 
 def table_make(name=table_name):
     '''give name get created ddb table'''
@@ -40,11 +39,9 @@ def table_make(name=table_name):
     )
     return response
 
-
 def delete_table(name=table_name):
     '''delete a named dynamodb table'''
     response = client.delete_table(TableName=name)
-
 
 def request(request_type=request_type, company_names=company_names):
     request_names = []
@@ -59,7 +56,6 @@ def request(request_type=request_type, company_names=company_names):
             }
         )
     return request_names
-
 
 def add_items(name=table_name, request=request()):
     '''give ddb name and put items in it'''

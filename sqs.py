@@ -42,12 +42,13 @@ def receive_msg(queue_name):
     response = client.receive_message(QueueUrl=url, MaxNumberOfMessages=10)
     return response
 
-def delete_msg():
-    '''ntg'''
-    pass
-
 def purge_q(queue_name):
     '''purge named queue'''
     url = queue_url(client, queue_name)
     response = client.purge_queue(QueueUrl=url)
     return response
+
+
+def delete_msg():
+    '''ntg'''
+    pass
