@@ -1,5 +1,7 @@
 # 498fpdv5
-MSDS 498 final project demo video week 5
+MSDS 498 final project demo video for week 4: *down the rabbit hole*
+
+please click the video to hear sound or follow along with the transcript that's set just below the video.
 
 ![demo](https://user-images.githubusercontent.com/38410965/112000824-b77ce100-8af4-11eb-821b-7059adcf0f23.mp4)
 
