@@ -173,7 +173,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### Dynamo via AWS Python SDK
 
-dynamo.py
+dynamo.py    
 managing ‘fang’
 
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
@@ -185,7 +185,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### SQS via AWS Python SDK
 
-sqs.py  
+sqs.py      
 —> managing ‘producer’
 
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
@@ -197,7 +197,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### Events via AWS Python SDK
 
-event.py
+event.py    
 —> managing “5 minute timer”
 
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
@@ -209,7 +209,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### IAM roles via AWS Python SDK
 
-iam.py
+iam.py      
 —> managing “Admin4Lambda498”
 
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
@@ -221,7 +221,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### Lambda make via AWS SAM via AWS CLI
 
-lambda.sh
+lambda.sh      
 —> making ‘serverlessproducer’ and ‘producerai’
   - [x] initialize
   - [x] build
@@ -236,7 +236,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### All together now …
 
-make.py  
+make.py    
 (tear_down.py)  
 
 calls all the bots sequentially  
