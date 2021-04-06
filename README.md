@@ -5,6 +5,10 @@ MSDS 498 final project demo video week 5
 
 #
 
+> Hi thank you for watching my demo video of building  a serverless AI data engineering pipeline. 
+You might remember I completed this project last week using the AWS management console.  This week my objective was to do the same with code so that it could be repeatedly tested and modified with less effort. [pause] To do this I started with AWS command line interface but progressed to their Python SDK because I wanted to build a command line tool using click and other features Ive been learning 
+Eventually I iincorporated and implemented SAM which is AWS sever less application model to build out the Lambda functions for this infra. I will briefly show you some code later for executing this infrastructure, but first explain what role AWS SAM has in this. For now, its important to say that making infra with the SDK is ... 
+
 **Demo Video 5** 
 ### (aka the Rabbit Hole)
 
@@ -33,6 +37,8 @@ https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/s
 
 #
 
+> ... a snap.  Most parts of the infra can be made in only 2 lines of code which is a lot less effort and time than the 24 minutes 35 seconds it took me with the management console last week.
+
 ### Infrastructure as code
 
 **Objective:** command line tool
@@ -53,6 +59,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 <img width="105" alt="2435 60" src="https://user-images.githubusercontent.com/38410965/113646422-cae08e00-9656-11eb-924f-22895d86ce67.png">
 
 #
+
+> The first wrinkle in this project led me from using only AWS SDK to write the infrastructure to incorporating AWS severless application model. The reason for switch is that when you build Lamnda functions in python and those python lines call iibraries, well, those libraries might be different depending on which OS you are writing in.  Libraries for AWS linux may not be the same as for MacOSX and so when you package your function together with these dependency libraries and ship them to Amazon to run on their linux servers, they may not work. What is the test of whether they might work?
 
 ### Infrastructure as code
 
@@ -88,6 +96,8 @@ producerai
 
 #
 
+> If a library is written in python, then you might be ok. Like our friend Boto3 here is native to python.  You can write a python function on OS X, import the boto3 library, and deploy the package to AWS linux.  If the library is not written in python or is written e.g. in c then your library that is good for OS X may be different enough to fail on AWS linux servers.  AWS Serverless Application Model or SAM is the answer.   With SAM you don’t package up the libraries. You give SAM your requirements file and and in the process building your app, AWS imports the libraries that are meant for their servers.  So, testing some of my other libraries, ...
+
 ### Infrastructure as code
 
 **Wrinkle:**  	Libraries aka modules aka packages for OS X may not be for Linux 
@@ -119,6 +129,8 @@ producerai
 
 #
 
+> ... pandas is written mostly in python, but ...
+
 ### AWS CLI or AWS SDK
 
 **Is Pandas written in C?**
@@ -131,6 +143,8 @@ Not really
 
 #
 
+> ... is based on numpy, ...
+
 ### AWS CLI or AWS SDK
 
 **Is Pandas based on numpy?**
@@ -140,6 +154,8 @@ Yes
 <img width="1014" alt="pandas and NumPy arrays explained  by Eric van Rees" src="https://user-images.githubusercontent.com/38410965/113647313-9ec60c80-9658-11eb-8fa4-cf270d1d03fb.png">
 
 #
+
+> which in turn is written in c for speed.
 
 ### AWS CLI or AWS SDK
 
@@ -151,7 +167,7 @@ Yes
 
 #
 
-> 
+> So, we end up with a hybrid approach: [pause] all components written in AWS CLI except for Lambdas infrastructure which is written in SAM which is a command line interface. 
 
 ### AWS Severless Application Model (SAM)
 
@@ -173,7 +189,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> so we end up with a hybrid approach [pause] all components written in AWS CLI except Lambdas infrastructure written in SAM which is a command line interface just to give you a feel of the code, 
+> Just to give you a feel of the code, this creates and manages DynamoDB, ...
 
 ### Dynamo via AWS Python SDK
 
@@ -187,7 +203,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> creates and manages DynamoDB
+> ... this creates and manages SQS and its messages, ... 
 
 ### SQS via AWS Python SDK
 
@@ -201,7 +217,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> creates and manages SQS and its messages
+> ... this creates and manages events, ...
 
 ### Events via AWS Python SDK
 
@@ -215,7 +231,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> creates and manages events
+> ... this creates and manages IAM roles, ...
 
 ### IAM roles via AWS Python SDK
 
@@ -229,7 +245,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> creates and manages IAM roles and for Lambda this 14 initializes, builds and deploys 2 lambda functions (theres copying Python code over from GitHub in there so both this long)
+> ... and for Lambdas, this initializes, builds and deploys 2 lambda functions (though it's actually alot shorter than this because I am copying Python code over from GitHub and massaging some of the settings).
 
 ### Lambda make via AWS SAM via AWS CLI
 
@@ -246,7 +262,7 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
-> the beauty is that all this can be one program that does all those steps 
+> The beauty is that all this can be done in one program that does all those steps just mentioned.
 
 ### All together now …
 
@@ -260,7 +276,7 @@ q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda
 
 #
 
-> wrinkle is that the 5 minute timer I created sees the Lamnda function
+> The wrinkle is that my 5 minute timer I created sees the Lamnda function, ...
 
 ### Wrinkle 2.0 : 
 ### Event ‘5minutetimer’ sees (targets) Lambda ‘serverlessproducer’
@@ -271,7 +287,7 @@ q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda
 
 #
 
-> but the Lambda doesn’t see it
+> ... but the Lambda doesn’t see it. 
 
 ### Wrinkle 2.0 : 
 ### but ‘5minutetimer’ not on Lambda ‘serverlessproducer’ as trigger
@@ -283,7 +299,7 @@ Trying not to use the Lambda console
 
 # 
 
-> Last week I would have simply added the trigger via the console but [pause] it only takes 3 minutes to build this infrastucrue this week versus 24 minutes last week so I am trying hard not to use the management console 
+> Last week, I would have simply added the trigger via the console, but [pause] it only takes 3 minutes to build this infrastucrue this week versus 24 minutes last week: so, I'm trying really hard not to use the management console.
 
 ### Trying not to use the AWS Lambda console
 
@@ -297,7 +313,7 @@ Add trigger : EventBridge (CloudWatch Events)
 
 #
 
-> This week i will take it easy as I have 2 college applications to edit.  In 2 weeks there will be more to as I understand this is the real tool to use
+> This week I'll take it easy as I have 2 college applications to edit.  So, Ill be back in 2 weeks with something a bit more interesting.  I understand that the AWS CLK is the real tool to use and so will be using that in a couple weeks.  Thank you.
 
 ### More to come
 
