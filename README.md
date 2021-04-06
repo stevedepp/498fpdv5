@@ -151,6 +151,8 @@ Yes
 
 #
 
+> 
+
 ### AWS Severless Application Model (SAM)
 
 **Objective:** command line tool
@@ -171,6 +173,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
+> so we end up with a hybrid approach [pause] all components written in AWS CLI except Lambdas infrastructure written in SAM which is a command line interface just to give you a feel of the code, 
+
 ### Dynamo via AWS Python SDK
 
 dynamo.py    
@@ -182,6 +186,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 <img width="1202" alt="Users  stevedepp  Documents  Personal  MSDS  498  week 05  fpdv5  2 ddb py" src="https://user-images.githubusercontent.com/38410965/113647633-31ff4200-9659-11eb-9642-f3e82b4cad46.png">
 
 #
+
+> creates and manages DynamoDB
 
 ### SQS via AWS Python SDK
 
@@ -195,6 +201,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
+> creates and manages SQS and its messages
+
 ### Events via AWS Python SDK
 
 event.py    
@@ -207,6 +215,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
+> creates and manages events
+
 ### IAM roles via AWS Python SDK
 
 iam.py      
@@ -218,6 +228,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 <img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113647937-c49fe100-9659-11eb-89fe-bdfcb777344f.png">
 
 #
+
+> creates and manages IAM roles and for Lambda this 14 initializes, builds and deploys 2 lambda functions (theres copying Python code over from GitHub in there so both this long)
 
 ### Lambda make via AWS SAM via AWS CLI
 
@@ -234,6 +246,8 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 #
 
+> the beauty is that all this can be one program that does all those steps 
+
 ### All together now …
 
 make.py    
@@ -246,6 +260,8 @@ q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda
 
 #
 
+> wrinkle is that the 5 minute timer I created sees the Lamnda function
+
 ### Wrinkle 2.0 : 
 ### Event ‘5minutetimer’ sees (targets) Lambda ‘serverlessproducer’
 
@@ -254,6 +270,8 @@ q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda
 <img width="883" alt="minutetimer" src="https://user-images.githubusercontent.com/38410965/113648296-64f60580-965a-11eb-96fd-028c45f8c943.png">
 
 #
+
+> but the Lambda doesn’t see it
 
 ### Wrinkle 2.0 : 
 ### but ‘5minutetimer’ not on Lambda ‘serverlessproducer’ as trigger
@@ -264,6 +282,8 @@ Trying not to use the Lambda console
 <img width="883" alt="verlessproducer-HelloWorldFunction-1ST2EN5083THE" src="https://user-images.githubusercontent.com/38410965/113648409-92db4a00-965a-11eb-90c3-662e891ea7c0.png">
 
 # 
+
+> Last week I would have simply added the trigger via the console but [pause] it only takes 3 minutes to build this infrastucrue this week versus 24 minutes last week so I am trying hard not to use the management console 
 
 ### Trying not to use the AWS Lambda console
 
@@ -276,6 +296,8 @@ Add trigger : EventBridge (CloudWatch Events)
 <img width="656" alt="Add trigger" src="https://user-images.githubusercontent.com/38410965/113648535-c027f800-965a-11eb-82a9-ca6c26da3d91.png">
 
 #
+
+> This week i will take it easy as I have 2 college applications to edit.  In 2 weeks there will be more to as I understand this is the real tool to use
 
 ### More to come
 
