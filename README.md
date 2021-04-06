@@ -45,7 +45,7 @@ https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/s
     - [x] 5 minute timer
     - [x] SQS
 
-**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
 
 <img width="423" alt="Al Data Engineering" src="https://user-images.githubusercontent.com/38410965/113646414-c4521680-9656-11eb-9bf6-2f2d6388743c.png">
@@ -71,7 +71,7 @@ Lambda function (Python) dependencies are packaged with function
 
 If your OS (Mac OS X) has a version of these python libraries different than e.g. Amazon Linux ...
 
-**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
 
 serverlessproducer
@@ -102,7 +102,7 @@ Wrinkle:  	Libraries aka modules aka packages for OS X may not be for Linux
 - [x] wikipedia
 - [x] pandas
 
-**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
 
 serverlessproducer
@@ -168,7 +168,7 @@ Objective: command line tool
   - [x] Lambda = serverlessproducer
   - [x] Lambda = producerai
 
-**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
 
 
