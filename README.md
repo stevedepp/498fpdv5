@@ -36,8 +36,8 @@ https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/s
 ### Infrastructure as code
 
 **Objective:** command line tool
--[x] AWS SDK 
-  - [x] DynamoDB
+- [x] AWS SDK   
+  - [x] DynamoDB  
   - [x] SQS
   - [x] S3 bucket
   - [x] IAM roles
