@@ -231,3 +231,59 @@ lambda.sh
 
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
+
+<img width="1202" alt="lambda sh" src="https://user-images.githubusercontent.com/38410965/113648143-22342d80-965a-11eb-9274-a0a03babb5ae.png">
+
+#
+
+### All together now …
+
+make.py
+(tear_down.py)
+
+calls all the bots sequentially 
+q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda 
+
+<img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113648233-4728a080-965a-11eb-82a0-a2e925943769.png">
+
+#
+
+### Wrinkle 2.0 : 
+### Event ‘5minutetimer’ sees (targets) Lambda ‘serverlessproducer’
+
+<img width="397" alt="Target(s) (1)" src="https://user-images.githubusercontent.com/38410965/113648285-61627e80-965a-11eb-8e48-725f072db4b8.png">
+
+<img width="883" alt="minutetimer" src="https://user-images.githubusercontent.com/38410965/113648296-64f60580-965a-11eb-96fd-028c45f8c943.png">
+
+#
+
+### Wrinkle 2.0 : 
+### but ‘5minutetimer’ not on Lambda ‘serverlessproducer’ as trigger
+
+Trying not to use the Lambda console
+**+ Add trigger**
+
+<img width="883" alt="verlessproducer-HelloWorldFunction-1ST2EN5083THE" src="https://user-images.githubusercontent.com/38410965/113648409-92db4a00-965a-11eb-90c3-662e891ea7c0.png">
+
+# 
+
+### Trying not to use the AWS Lambda console
+
+**... but it tests successfully that way!!**
+
+Add trigger : EventBridge (CloudWatch Events)
+
+<img width="388" alt="AWS SDK + SAM" src="https://user-images.githubusercontent.com/38410965/113648508-b900ea00-965a-11eb-9ae4-c765ab9a7217.png">
+
+<img width="656" alt="Add trigger" src="https://user-images.githubusercontent.com/38410965/113648535-c027f800-965a-11eb-82a9-ca6c26da3d91.png">
+
+#
+
+### More to come
+
+AWS SAM
+AWS CLI
+AWS CDK
+https://aws.amazon.com/cdk/
+
+<img width="835" alt="AWS Cloud Development Kit" src="https://user-images.githubusercontent.com/38410965/113648585-d33ac800-965a-11eb-9cd9-88fa825949c3.png">
