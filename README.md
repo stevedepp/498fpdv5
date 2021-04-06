@@ -171,4 +171,63 @@ Objective: command line tool
 **DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
 fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
 
+#
 
+### Dynamo via AWS Python SDK
+
+dynamo.py
+managing ‘fang’
+
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
+fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
+
+<img width="1202" alt="Users  stevedepp  Documents  Personal  MSDS  498  week 05  fpdv5  2 ddb py" src="https://user-images.githubusercontent.com/38410965/113647633-31ff4200-9659-11eb-9642-f3e82b4cad46.png">
+
+#
+
+### SQS via AWS Python SDK
+
+sqs.py  
+—> managing ‘producer’
+
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
+fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
+
+<img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113647727-5a873c00-9659-11eb-8c20-f2b4ebf1e71b.png">
+
+#
+
+### Events via AWS Python SDK
+
+event.py
+—> managing “5 minute timer”
+
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
+fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
+
+<img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113647800-7be82800-9659-11eb-89a2-e6e16dd998ed.png">
+
+#
+
+### IAM roles via AWS Python SDK
+
+iam.py
+—> managing “Admin4Lambda498”
+
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
+fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
+
+<img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113647937-c49fe100-9659-11eb-89fe-bdfcb777344f.png">
+
+#
+
+### Lambda make via AWS SAM via AWS CLI
+
+lambda.sh
+—> making ‘serverlessproducer’ and ‘producerai’
+  - [x] initialize
+  - [x] build
+  - [x] deploy
+
+**DynamoDB —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**  
+fang —> serverlessproducer —> producer —> producerai —> comprehend —> fangsentiment-depp
