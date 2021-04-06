@@ -1,5 +1,5 @@
 # 498fpdv5
-MSDS 498 final project demo video for week 4: *down the rabbit hole*
+MSDS 498 final project demo video for week 5: *The Rabbit Hole*
 
 please click the video to hear sound or follow along with the transcript that's set just below the video.
 
