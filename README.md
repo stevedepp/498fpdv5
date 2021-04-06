@@ -151,11 +151,9 @@ Yes
 
 #
 
-### 
+### AWS Severless Application Model (SAM)
 
-AWS Severless Application Model (SAM)
-
-Objective: command line tool
+**Objective:** command line tool
 - [x] AWS SDK 
   - [x] DynamoDB
   - [x] SQS
