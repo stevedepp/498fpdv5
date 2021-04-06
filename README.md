@@ -258,7 +258,7 @@ q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda
 ### Wrinkle 2.0 : 
 ### but ‘5minutetimer’ not on Lambda ‘serverlessproducer’ as trigger
 
-Trying not to use the Lambda console
+Trying not to use the Lambda console    
 **+ Add trigger**
 
 <img width="883" alt="verlessproducer-HelloWorldFunction-1ST2EN5083THE" src="https://user-images.githubusercontent.com/38410965/113648409-92db4a00-965a-11eb-90c3-662e891ea7c0.png">
