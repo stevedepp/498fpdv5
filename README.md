@@ -90,7 +90,7 @@ producerai
 
 ### Infrastructure as code
 
-Wrinkle:  	Libraries aka modules aka packages for OS X may not be for Linux 
+**Wrinkle:**  	Libraries aka modules aka packages for OS X may not be for Linux 
 
 **Test:**	Is it written in C?
 - [ ] No —> AWS SDK
