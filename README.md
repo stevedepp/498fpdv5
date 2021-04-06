@@ -236,11 +236,11 @@ fang —> serverlessproducer —> producer —> producerai —> comprehend —> 
 
 ### All together now …
 
-make.py
-(tear_down.py)
+make.py  
+(tear_down.py)  
 
-calls all the bots sequentially 
-q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda 
+calls all the bots sequentially  
+q —> ddbt —> ddbi —> i —> roles —> rule —> s3 —> lambda   
 
 <img width="1202" alt="El lambda sh" src="https://user-images.githubusercontent.com/38410965/113648233-4728a080-965a-11eb-82a0-a2e925943769.png">
 
@@ -279,9 +279,9 @@ Add trigger : EventBridge (CloudWatch Events)
 
 ### More to come
 
-AWS SAM
-AWS CLI
-AWS CDK
-https://aws.amazon.com/cdk/
+AWS SAM  
+AWS CLI  
+AWS CDK  
+https://aws.amazon.com/cdk/  
 
 <img width="835" alt="AWS Cloud Development Kit" src="https://user-images.githubusercontent.com/38410965/113648585-d33ac800-965a-11eb-9cd9-88fa825949c3.png">
